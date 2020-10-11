@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: postgres
+  database: movies_development
   pool: 5
   username: postgres
   password:
@@ -47,7 +47,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: postgres
+  database: movies_test
   pool: 5
   username: postgres
   password:
