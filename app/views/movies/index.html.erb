@@ -1,0 +1,15 @@
+
+
+<div class="main">
+  <div class="container">
+  <h2>Popular Films</h2>
+    <% @movies.each do |movie| %>
+    <div class="movie">
+      <%= image_tag movie.img_src %>
+      <h3><%= movie.title %></h3>
+      <p><%= movie.summary %></p>
+      <%= link_to "Learn more", movie_path(movie) %>
+    </div>
+    <% end %>
+  </div>
+</div>
