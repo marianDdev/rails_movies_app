@@ -1,12 +1,18 @@
-<div>
-    <div>
-        <%= form_with(url: "/movies", method: "get") do %>
-            <%= label_tag(:movie, "Create new movie") %>
-            <%= text_field_tag(:title) %>
+
+
+<div class="create">
+  <div class="container">
+   	<%= form_for(@movie) do |f| %>  
+  		<div class="field"> 
+    		<%= f.label :movie %><br> 
+    		<%= text_field_tag(:title) %>
             <%= text_field_tag(:summary) %>
             <%= text_field_tag(:description) %>
             <%= text_field_tag(:img_src) %>
-            <%= submit_tag("Search") %>
-      <% end %>      
-    </div>
+  		</div> 
+  		<div class="actions"> 
+    		<%= f.submit "Create" %> 
+  		</div> 
+		<% end %>
+  </div>
 </div>
