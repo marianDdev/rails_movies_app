@@ -1,14 +1,13 @@
-<div class="main">
-  <div class="container">
-    <h2>Popular Films</h2>
-    <% @movies.each do |movie| %>
-      <div class="movie">
-        <%= image_tag movie.img_src %>
-        <h3><%= movie.title %></h3>
+<div>
+  <div>
+  	<% @movies.each do |movie| %> 
+			<div> 
+        <p><%= movie.title %></p>
+        <img src="<%= movie.img_src %>">
         <p><%= movie.summary %></p>
-        <%= link_to "Learn more", movie_path movie %>
-      </div>
-    <% end %>
-    <%= link_to 'New Movie', "movies/new" %>
+      </div> 
+      <%= link_to "See more", movie_path(movie) %>
+		<% end %>
+		<%= link_to 'New Message', new_movie_path %>
   </div>
 </div>
