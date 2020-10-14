@@ -5,16 +5,16 @@ class MoviesController < ApplicationController
     
   def show
     @movie = Movie.find params[:id]
-   end
+  end
 
-   def new 
+  def new 
     @movie = Movie.new 
   end
   
   def create 
     @movie = Movie.new(movie_params) 
     if @movie.save 
-      redirect_to '/movies' 
+      redirect_to @movie 
     else 
       render 'new' 
     end 
@@ -22,6 +22,11 @@ class MoviesController < ApplicationController
 
    private 
   def movie_params 
-    params.require(:movie).permit(:title, :summary, :description, :img_src) 
+    params.permit(:movie) 
   end 
+
+  def show
+    @movie = Movie.find params[:id]
+  end
+
 end
