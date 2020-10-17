@@ -1,14 +1,12 @@
-
-
 <div class="create">
   <div class="container">
    	<%= form_for(@movie) do |f| %>  
   		<div class="field"> 
     		<%= f.label :movie %><br> 
-    		<%= text_field_tag(:title) %>
-            <%= text_field_tag(:summary) %>
-            <%= text_field_tag(:description) %>
-            <%= text_field_tag(:img_src) %>
+    		<%= f.text_area :title %>
+            <%= f.text_area :summary %>
+            <%= f.text_area :description %>
+            <%= f.text_area :img_src %>
   		</div> 
   		<div class="actions"> 
     		<%= f.submit "Create" %> 
